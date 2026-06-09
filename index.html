@@ -1261,10 +1261,10 @@
 
         @media (max-width: 540px) {
             .shell {
-                width: min(342px, calc(100% - 24px));
-                max-width: min(342px, calc(100% - 24px));
-                margin-left: 12px;
-                margin-right: 0;
+                width: min(336px, calc(100% - 32px));
+                max-width: min(336px, calc(100% - 32px));
+                margin-left: auto;
+                margin-right: auto;
                 padding-left: 0;
                 padding-right: 0;
             }
@@ -1281,7 +1281,7 @@
         }
     </style>
 </head>
-<body>
+<body translate="no" class="notranslate">
     <header class="topbar">
         <div class="shell topbar-inner">
             <div class="brand">
@@ -1329,7 +1329,8 @@
         (() => {
             "use strict";
 
-            let lang = localStorage.getItem("sab_public_lang") || "id";
+            const initialLang = new URLSearchParams(window.location.search).get("lang");
+            let lang = initialLang === "en" ? "en" : "id";
             let data = null;
 
             const COPY = {
@@ -1787,7 +1788,6 @@
 
             $("langToggle").addEventListener("click", () => {
                 lang = lang === "id" ? "en" : "id";
-                localStorage.setItem("sab_public_lang", lang);
                 render();
             });
 

@@ -1,6 +1,6 @@
 {
   "schema_version": "sab-public-cockpit-v1",
-  "generated_at": "2026-06-09T10:19:58+00:00",
+  "generated_at": "2026-06-09T10:30:17+00:00",
   "title": "SAAT AKU BERSUARA",
   "release_date": "2026-06-18",
   "trailer_live_date": "2026-06-01",
@@ -40,7 +40,7 @@
         {
           "owner": "Tim Materi",
           "action": "Pakai testimoni screening paling kuat sebagai klip singkat: kenapa film ini layak ditonton, lalu tutup dengan CTA 18 Juni di bioskop.",
-          "expected_evidence": "Komentar mulai mengulang alasan menonton seperti jangan ga nonton, ajak keluarga, atau wajib nonton."
+          "expected_evidence": "Komentar mulai mengulang alasan menonton seperti jangan lewatkan, ajak keluarga, atau wajib nonton."
         },
         {
           "owner": "Tim Sosial",
@@ -67,7 +67,7 @@
           "bullets": [
             "<strong>Lebih dari trailer:</strong> 12 posting resmi terbaru, 14 kandidat press publik, dan 10 kandidat hashtag terbaca; sebagian besar terkait SAB, tetapi tetap perlu disaring sebelum disebut gerakan organik.",
             "<strong>Angka terbaru:</strong> trailer resmi terbaca 558.877 pemutaran; recap screening 11.789; pickup kandidat tertinggi 68.460 pemutaran dan terkait special screening.",
-            "<strong>Trust mulai hidup:</strong> komentar screening kecil tetapi menyebut film inspiratif dan jangan ga nonton.",
+            "<strong>Trust mulai hidup:</strong> komentar screening kecil tetapi menyebut film inspiratif dan memberi ajakan agar film tidak dilewatkan.",
             "<strong>Masih belum cukup:</strong> permintaan kota Semarang adalah sinyal awal, bukan bukti demand atau komitmen komunitas."
           ]
         },
@@ -81,7 +81,7 @@
           "active": false,
           "bullets": [
             "<strong>Bukan lagi masalah perhatian saja:</strong> trailer, screening, aksi Car Free Day, press kandidat, dan pickup hashtag sudah membuat film lebih terlihat.",
-            "<strong>Masalahnya sekarang:</strong> sinyal tindakan masih tipis; baru ada contoh kota dan dorongan jangan ga nonton.",
+            "<strong>Masalahnya sekarang:</strong> sinyal tindakan masih tipis; baru ada contoh kota dan satu ajakan agar film tidak dilewatkan.",
             "<strong>Yang dicari berikutnya:</strong> mau nonton, tiket, jadwal, kota, nobar, ajak keluarga/teman, atau komitmen kelompok.",
             "<strong>Standar bukti:</strong> satu komentar boleh jadi kandidat; pola berulang baru bisa mengubah diagnosis."
           ]
@@ -110,7 +110,7 @@
           "extra": "metrics_signals",
           "bullets": [
             "<strong>Kota/jadwal/tiket:</strong> cari apakah Semarang atau kota lain muncul lagi setelah CTA diperjelas.",
-            "<strong>Frasa niat:</strong> pantau jangan ga nonton, mau nonton, wajib nonton, ajak keluarga/teman, dan nobar.",
+            "<strong>Frasa niat:</strong> pantau jangan lewatkan, mau nonton, wajib nonton, ajak keluarga/teman, dan nobar.",
             "<strong>Tag/organik:</strong> #saatakubersuara punya kandidat pickup, tetapi ini masih perhatian awal. Naikkan hanya jika relevansi film jelas dan muncul bahasa niat."
           ]
         },
@@ -178,7 +178,7 @@
           "bullets": [
             "<strong>Beyond the trailer:</strong> 12 recent official posts, 14 public press candidates, and 10 hashtag candidates were read; most relate to SAB, but they still need filtering before we call this organic movement.",
             "<strong>Latest numbers:</strong> the official trailer reads at 558,877 plays; screening recap at 11,789; the top pickup candidate has 68,460 plays and is tied to the special screening.",
-            "<strong>Trust is becoming usable:</strong> the screening comments are small but include inspiring-film and do-not-miss-it language.",
+            "<strong>Trust is becoming usable:</strong> the screening comments are small but include inspiring-film language and one nudge not to miss the film.",
             "<strong>Still not enough:</strong> the Semarang city request is an early signal, not demand proof or a community commitment."
           ]
         },
@@ -192,7 +192,7 @@
           "active": false,
           "bullets": [
             "<strong>Not just an attention problem anymore:</strong> trailer, screening, Car Free Day activation, press candidates, and hashtag pickup make the film more visible.",
-            "<strong>The issue now:</strong> action signals are still thin; there is only one city example and a do-not-miss-it push.",
+            "<strong>The issue now:</strong> action signals are still thin; there is only one city example and one nudge not to miss the film.",
             "<strong>What we need next:</strong> want to watch, tickets, schedule, city, group viewing, bring family/friends, or group commitments.",
             "<strong>Evidence standard:</strong> one comment can be a candidate; repeated patterns change the diagnosis."
           ]
@@ -395,7 +395,7 @@
       },
       "state": "lemah",
       "read": {
-        "id": "Tema survivor, dukungan, dan berani bersuara makin jelas. Tetapi copy consistency tetap risiko taktis: tanggal 2036/April, variasi judul, atau hashtag yang salah bisa membelah perhatian.",
+        "id": "Tema survivor, dukungan, dan berani bersuara makin jelas. Tetapi copy consistency tetap risiko taktis: tanggal, variasi judul, atau hashtag yang tidak konsisten bisa membelah perhatian.",
         "en": "The survivor, support, and speaking-up themes are clearer. But copy consistency remains a tactical risk: wrong dates, title variants, or wrong hashtags can split attention."
       }
     },
@@ -411,8 +411,8 @@
       },
       "state": "bergerak",
       "read": {
-        "id": "Trust makin punya bahan: recap screening dan komentar menyebut film inspiratif serta jangan ga nonton. Ini membantu belief, tetapi sampelnya kecil.",
-        "en": "Trust has more material: the screening recap and comments include an inspiring-film read and a do-not-miss-it phrase. This helps belief, but the sample is small."
+        "id": "Trust makin punya bahan: recap screening dan komentar menyebut film inspiratif serta ajakan agar film tidak dilewatkan. Ini membantu belief, tetapi sampelnya kecil.",
+        "en": "Trust has more material: the screening recap and comments include an inspiring-film read and an audience nudge to not miss the film. This helps belief, but the sample is small."
       }
     },
     {
@@ -427,8 +427,8 @@
       },
       "state": "lemah",
       "read": {
-        "id": "Ada sinyal niat awal, bukan bukti kuat: satu komentar meminta special screening Semarang dan satu komentar mendorong jangan ga nonton. Yang masih kurang: jadwal, tiket, nobar, dan rencana menonton yang berulang.",
-        "en": "There is an early intent signal, not strong proof: one comment asks for a Semarang special screening and one pushes a do-not-miss-it phrase. Still missing: repeated schedule, ticket, group-viewing, and viewing-plan language."
+        "id": "Ada sinyal niat awal, bukan bukti kuat: satu komentar meminta special screening Semarang dan satu komentar mengajak agar film tidak dilewatkan. Yang masih kurang: jadwal, tiket, nobar, dan rencana menonton yang berulang.",
+        "en": "There is an early intent signal, not strong proof: one comment asks for a Semarang special screening and one comment nudges people not to miss the film. Still missing: repeated schedule, ticket, group-viewing, and viewing-plan language."
       }
     },
     {
