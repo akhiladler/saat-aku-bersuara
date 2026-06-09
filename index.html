@@ -428,6 +428,14 @@
             color: var(--ink);
             font-size: 12px;
             font-weight: 900;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .guide-chip:hover,
+        .guide-chip:focus-visible {
+            border-color: var(--gold);
+            outline: none;
         }
 
         .guide-chip-number {
@@ -1505,10 +1513,10 @@
                     ? ["Hari Ini", "Bottleneck", "Aksi", "Sinyal", "Pasar"]
                     : ["Today", "Bottleneck", "Action", "Signals", "Market"];
                 return items.map((item, index) => `
-                    <span class="guide-chip">
+                    <button class="guide-chip" type="button" data-guide-index="${index}" aria-label="${esc(lang === "id" ? `Buka tanda ${index + 1}: ${item}` : `Open sign ${index + 1}: ${item}`)}">
                         <span class="guide-chip-number">0${index + 1}</span>
                         <span>${esc(item)}</span>
-                    </span>
+                    </button>
                     ${index < items.length - 1 ? '<span class="guide-arrow">></span>' : ''}`).join("");
             };
 
@@ -1714,15 +1722,32 @@
 
             function wireSignCards() {
                 const cards = Array.from(document.querySelectorAll("[data-sign-card]"));
+                const setActiveCard = (targetCard) => {
+                    cards.forEach((item) => {
+                        const isActive = item === targetCard;
+                        item.classList.toggle("active", isActive);
+                        item.querySelector(".sign-button").setAttribute("aria-expanded", isActive ? "true" : "false");
+                    });
+                };
                 cards.forEach((card) => {
                     const button = card.querySelector(".sign-button");
                     button.addEventListener("click", () => {
                         const shouldCollapse = card.classList.contains("active");
-                        cards.forEach((item) => {
-                            const isActive = !shouldCollapse && item === card;
-                            item.classList.toggle("active", isActive);
-                            item.querySelector(".sign-button").setAttribute("aria-expanded", isActive ? "true" : "false");
-                        });
+                        if (shouldCollapse) {
+                            card.classList.remove("active");
+                            button.setAttribute("aria-expanded", "false");
+                            return;
+                        }
+                        setActiveCard(card);
+                    });
+                });
+                document.querySelectorAll("[data-guide-index]").forEach((chip) => {
+                    chip.addEventListener("click", () => {
+                        const index = Number(chip.getAttribute("data-guide-index"));
+                        const targetCard = cards[index];
+                        if (!targetCard) return;
+                        setActiveCard(targetCard);
+                        targetCard.scrollIntoView({ behavior: "smooth", block: "start" });
                     });
                 });
             }
