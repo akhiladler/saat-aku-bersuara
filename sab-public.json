@@ -1,0 +1,541 @@
+{
+  "schema_version": "sab-public-cockpit-v1",
+  "generated_at": "2026-06-09T09:47:16+00:00",
+  "title": "SAAT AKU BERSUARA",
+  "release_date": "2026-06-18",
+  "trailer_live_date": "2026-06-01",
+  "phase": {
+    "key": "SOCIAL_TRAILER_LIVE",
+    "label": {
+      "id": "Trailer Instagram sudah tayang",
+      "en": "Instagram trailer is live"
+    }
+  },
+  "trailer": {
+    "official_url": "https://www.instagram.com/p/DZCtTgWBYW-/",
+    "thumbnail_url": null
+  },
+  "readiness_note": {
+    "id": "Bacaan ini memakai snapshot publik terpilih. Angka dan komentar tetap perlu dibaca sebagai sinyal, bukan prediksi.",
+    "en": "This read uses selected public snapshots. Numbers and comments should be read as signals, not predictions."
+  },
+  "cockpit": {
+    "id": {
+      "intro": "Halaman ini membantu kita melihat apa yang benar-benar bergerak, lalu menentukan langkah berikutnya.",
+      "hero_verdict": {
+        "strong": "Bergerak lebih nyata.",
+        "copy": "Hambatan utama: niat menonton. Fokus: ubah perhatian menjadi rencana nonton."
+      },
+      "health": {
+        "state": "mulai_bergerak",
+        "label": "Bergerak lebih nyata",
+        "sentence": "SAB bergerak lebih nyata setelah trailer, screening, aksi Car Free Day, dan pickup hashtag kandidat. Ada sinyal kota awal dari Semarang, tetapi demand belum terbukti."
+      },
+      "focus": {
+        "state": "intent",
+        "label": "Niat Menonton",
+        "sentence": "Perhatian dan trust naik. Yang belum cukup terlihat adalah rencana menonton yang berulang: mau nonton, tiket, jadwal, kota, nobar, atau ajakan konkret."
+      },
+      "actions": [
+        {
+          "owner": "Tim Materi",
+          "action": "Pakai testimoni screening paling kuat sebagai klip singkat: kenapa film ini layak ditonton, lalu tutup dengan CTA 18 Juni di bioskop.",
+          "expected_evidence": "Komentar mulai mengulang alasan menonton seperti jangan ga nonton, ajak keluarga, atau wajib nonton."
+        },
+        {
+          "owner": "Tim Sosial",
+          "action": "Rapikan semua caption penting: Saat Aku Bersuara, #saatakubersuara, dan 18 Juni 2026. Perlakukan tag/variasi judul lain sebagai kandidat sampai terbukti bergerak.",
+          "expected_evidence": "Tidak ada lagi tanggal atau tag yang membelah perhatian saat orang baru mencari filmnya."
+        },
+        {
+          "owner": "Tim Aktivasi",
+          "action": "Ubah sinyal kota awal menjadi CTA praktis: tanya kota mana yang ingin screening/nobar, lalu catat PIC, kota, tanggal, dan estimasi orang bila muncul.",
+          "expected_evidence": "Permintaan seperti Semarang berubah menjadi rencana yang bisa ditindaklanjuti, bukan hanya komentar satu kali."
+        }
+      ],
+      "cinema_note": "Realitas luar lebih mendukung dibanding 3 Juni: ada trailer besar, screening, aksi Car Free Day, kandidat press publik, pickup hashtag, dan sinyal kota awal. Tetapi dari sisi pasar, ini masih bukti perhatian dan trust. Demand baru mulai terbaca jika permintaan kota, tiket, jadwal, nobar, atau komitmen komunitas muncul berulang.",
+      "cards": [
+        {
+          "number": 1,
+          "name": "Hari Ini",
+          "question": "Apa yang sedang terjadi?",
+          "answer": "Bergerak lebih nyata",
+          "summary": "Screening, aksi Car Free Day, posting resmi, dan pickup hashtag kandidat membuat perhatian lebih nyata; rencana menonton belum cukup terbukti.",
+          "tone": "moving",
+          "active": true,
+          "extra": "source",
+          "bullets": [
+            "<strong>Lebih dari trailer:</strong> 12 posting resmi terbaru, 14 kandidat press publik, dan 10 kandidat hashtag terbaca; sebagian besar terkait SAB, tetapi tetap perlu disaring sebelum disebut gerakan organik.",
+            "<strong>Angka terbaru:</strong> trailer resmi terbaca 558.877 pemutaran; recap screening 11.789; pickup kandidat tertinggi 68.460 pemutaran dan terkait special screening.",
+            "<strong>Trust mulai hidup:</strong> komentar screening kecil tetapi menyebut film inspiratif dan jangan ga nonton.",
+            "<strong>Masih belum cukup:</strong> permintaan kota Semarang adalah sinyal awal, bukan bukti demand atau komitmen komunitas."
+          ]
+        },
+        {
+          "number": 2,
+          "name": "Bottleneck",
+          "question": "Apa yang paling menghambat penonton datang?",
+          "answer": "Niat Menonton",
+          "summary": "Buktinya membaik, tetapi tindakan penonton belum cukup berulang.",
+          "tone": "blocked",
+          "active": false,
+          "bullets": [
+            "<strong>Bukan lagi masalah perhatian saja:</strong> trailer, screening, aksi Car Free Day, press kandidat, dan pickup hashtag sudah membuat film lebih terlihat.",
+            "<strong>Masalahnya sekarang:</strong> sinyal tindakan masih tipis; baru ada contoh kota dan dorongan jangan ga nonton.",
+            "<strong>Yang dicari berikutnya:</strong> mau nonton, tiket, jadwal, kota, nobar, ajak keluarga/teman, atau komitmen kelompok.",
+            "<strong>Standar bukti:</strong> satu komentar boleh jadi kandidat; pola berulang baru bisa mengubah diagnosis."
+          ]
+        },
+        {
+          "number": 3,
+          "name": "Aksi 48 Jam",
+          "question": "Apa yang harus dilakukan sekarang?",
+          "answer": "3 tindakan praktis",
+          "summary": "Tiga tindakan untuk mengubah momentum menjadi rencana per kota.",
+          "tone": "action",
+          "active": false,
+          "extra": "actions",
+          "bullets": [
+            "<strong>Tujuan:</strong> mengubah testimoni, aksi lapangan, dan sinyal kota awal menjadi alasan serta rencana menonton."
+          ]
+        },
+        {
+          "number": 4,
+          "name": "Sinyal",
+          "question": "Bukti apa yang harus dipantau?",
+          "answer": "Kota + intent + tag",
+          "summary": "Pantau bukti yang bisa mengubah diagnosis, bukan semua angka.",
+          "tone": "watch",
+          "active": false,
+          "extra": "metrics_signals",
+          "bullets": [
+            "<strong>Kota/jadwal/tiket:</strong> cari apakah Semarang atau kota lain muncul lagi setelah CTA diperjelas.",
+            "<strong>Frasa niat:</strong> pantau jangan ga nonton, mau nonton, wajib nonton, ajak keluarga/teman, dan nobar.",
+            "<strong>Tag/organik:</strong> #saatakubersuara punya kandidat pickup, tetapi ini masih perhatian awal. Naikkan hanya jika relevansi film jelas dan muncul bahasa niat."
+          ]
+        },
+        {
+          "number": 5,
+          "name": "Realitas Pasar",
+          "question": "Apakah kondisi luar mendukung penonton datang?",
+          "answer": "Perhatian naik; demand belum terbukti",
+          "summary": "Realitas luar makin mendukung perhatian, tetapi belum membuktikan permintaan.",
+          "tone": "weak",
+          "active": false,
+          "bullets": [
+            "<strong>Positif:</strong> trailer besar, screening, aksi Car Free Day, press kandidat, dan pickup hashtag membuat SAB lebih mudah ditemukan.",
+            "<strong>Positif kecil:</strong> ada permintaan special screening Semarang sebagai sinyal kota awal.",
+            "<strong>Belum cukup:</strong> campaign-led activity dan satu city request belum sama dengan demand pasar.",
+            "<strong>Yang mengubah pembacaan:</strong> city requests, ticket/schedule questions, nobar, atau komitmen komunitas muncul berulang."
+          ]
+        }
+      ]
+    },
+    "en": {
+      "intro": "This page helps us see what is actually moving, then decide the next step.",
+      "hero_verdict": {
+        "strong": "Moving more visibly.",
+        "copy": "Main bottleneck: viewing intent. Focus: turn attention into viewing plans."
+      },
+      "health": {
+        "state": "mulai_bergerak",
+        "label": "Moving more visibly",
+        "sentence": "SAB is moving more visibly after the trailer, screening, Car Free Day activation, and candidate hashtag pickup. There is an early city signal from Semarang, but demand is not proven."
+      },
+      "focus": {
+        "state": "intent",
+        "label": "Viewing Intent",
+        "sentence": "Attention and trust are rising. What is not visible enough yet is repeated viewing-plan language: wanting to watch, tickets, schedules, cities, group viewing, or concrete invitations."
+      },
+      "actions": [
+        {
+          "owner": "Content Team",
+          "action": "Use the strongest screening testimonial as a short clip: why this film is worth watching, then close with a June 18 cinema CTA.",
+          "expected_evidence": "Comments start repeating reasons to watch, such as do not miss this, bring family, or must watch."
+        },
+        {
+          "owner": "Social Team",
+          "action": "Clean up all important captions: Saat Aku Bersuara, #saatakubersuara, and June 18, 2026. Treat other tag/title variants as candidates until proven to move.",
+          "expected_evidence": "No more date or tag leakage when new people search for the film."
+        },
+        {
+          "owner": "Activation Team",
+          "action": "Turn early city signals into a practical CTA: ask which cities want screening/group viewing, then record owner, city, date, and estimated attendance if they appear.",
+          "expected_evidence": "Requests such as Semarang become actionable plans, not one-off comments."
+        }
+      ],
+      "cinema_note": "The outside reality is more supportive than on Jun 3: there is a large trailer, screening, Car Free Day activation, public press candidates, hashtag pickup, and an early city signal. But from the market perspective, this is still attention and trust evidence. Demand starts becoming readable only if city requests, tickets, schedules, group viewing, or community commitments appear repeatedly.",
+      "cards": [
+        {
+          "number": 1,
+          "name": "Today",
+          "question": "What is happening now?",
+          "answer": "Moving more visibly",
+          "summary": "Screening, Car Free Day activation, recent official posts, and candidate hashtag pickup make attention more visible; viewing plans are not proven enough yet.",
+          "tone": "moving",
+          "active": true,
+          "extra": "source",
+          "bullets": [
+            "<strong>Beyond the trailer:</strong> 12 recent official posts, 14 public press candidates, and 10 hashtag candidates were read; most relate to SAB, but they still need filtering before we call this organic movement.",
+            "<strong>Latest numbers:</strong> the official trailer reads at 558,877 plays; screening recap at 11,789; the top pickup candidate has 68,460 plays and is tied to the special screening.",
+            "<strong>Trust is becoming usable:</strong> the screening comments are small but include inspiring-film and do-not-miss-it language.",
+            "<strong>Still not enough:</strong> the Semarang city request is an early signal, not demand proof or a community commitment."
+          ]
+        },
+        {
+          "number": 2,
+          "name": "Bottleneck",
+          "question": "What most blocks turnout?",
+          "answer": "Viewing Intent",
+          "summary": "Evidence is improving, but audience action is not repeated enough yet.",
+          "tone": "blocked",
+          "active": false,
+          "bullets": [
+            "<strong>Not just an attention problem anymore:</strong> trailer, screening, Car Free Day activation, press candidates, and hashtag pickup make the film more visible.",
+            "<strong>The issue now:</strong> action signals are still thin; there is only one city example and a do-not-miss-it push.",
+            "<strong>What we need next:</strong> want to watch, tickets, schedule, city, group viewing, bring family/friends, or group commitments.",
+            "<strong>Evidence standard:</strong> one comment can be a candidate; repeated patterns change the diagnosis."
+          ]
+        },
+        {
+          "number": 3,
+          "name": "48-Hour Actions",
+          "question": "What should happen now?",
+          "answer": "3 practical actions",
+          "summary": "Three moves for turning momentum into city-level plans.",
+          "tone": "action",
+          "active": false,
+          "extra": "actions",
+          "bullets": [
+            "<strong>Goal:</strong> turn testimonials, field activity, and early city signals into reasons and plans to watch."
+          ]
+        },
+        {
+          "number": 4,
+          "name": "Signals",
+          "question": "What evidence should we watch?",
+          "answer": "City + intent + tags",
+          "summary": "Watch evidence that can change the diagnosis, not every number.",
+          "tone": "watch",
+          "active": false,
+          "extra": "metrics_signals",
+          "bullets": [
+            "<strong>City/schedule/tickets:</strong> watch whether Semarang or other cities appear again after the CTA is clearer.",
+            "<strong>Intent phrases:</strong> watch do not miss this, want to watch, must watch, bring family/friends, and group viewing.",
+            "<strong>Tags/organic:</strong> #saatakubersuara has pickup candidates, but this is still early attention. Upgrade only if film relevance is clear and intent language appears."
+          ]
+        },
+        {
+          "number": 5,
+          "name": "Market Reality",
+          "question": "Does the outside environment support turnout?",
+          "answer": "Attention up; demand not proven",
+          "summary": "Outside reality supports attention more than before, but still does not prove demand.",
+          "tone": "weak",
+          "active": false,
+          "bullets": [
+            "<strong>Positive:</strong> big trailer, screening, Car Free Day activation, press candidates, and hashtag pickup make SAB easier to discover.",
+            "<strong>Small positive:</strong> a Semarang special-screening request is an early city signal.",
+            "<strong>Not enough:</strong> campaign-led activity and one city request are not market demand.",
+            "<strong>What changes the read:</strong> repeated city requests, ticket/schedule questions, group viewing, or community commitments."
+          ]
+        }
+      ]
+    }
+  },
+  "metrics": [
+    {
+      "key": "instagram_trailer_plays",
+      "label": {
+        "id": "Pemutaran trailer IG",
+        "en": "IG trailer plays"
+      },
+      "value": 558877,
+      "format": "number",
+      "status": "captured_current_provider_snapshot",
+      "captured_at": "2026-06-09T15:08:13+07:00"
+    },
+    {
+      "key": "instagram_trailer_likes",
+      "label": {
+        "id": "Suka trailer IG",
+        "en": "IG trailer likes"
+      },
+      "value": 4418,
+      "format": "number",
+      "status": "captured_current_provider_snapshot",
+      "captured_at": "2026-06-09T15:08:13+07:00"
+    },
+    {
+      "key": "instagram_trailer_comments",
+      "label": {
+        "id": "Komentar trailer IG",
+        "en": "IG trailer comments"
+      },
+      "value": 161,
+      "format": "number",
+      "status": "captured_current_provider_snapshot",
+      "captured_at": "2026-06-09T15:08:13+07:00"
+    },
+    {
+      "key": "instagram_comment_sample_size",
+      "label": {
+        "id": "Sampel komentar dibaca",
+        "en": "Comment sample read"
+      },
+      "value": 15,
+      "format": "number",
+      "status": "candidate_only",
+      "captured_at": "2026-06-02T19:42:04+07:00"
+    },
+    {
+      "key": "tiktok_keyword_candidate_results",
+      "label": {
+        "id": "Kandidat TikTok minggu ini",
+        "en": "TikTok candidates this week"
+      },
+      "value": 5,
+      "format": "number",
+      "status": "candidate_only",
+      "captured_at": "2026-06-03T19:46:41+07:00"
+    },
+    {
+      "key": "public_press_candidates",
+      "label": {
+        "id": "Kandidat press publik",
+        "en": "Public press candidates"
+      },
+      "value": 14,
+      "format": "number",
+      "status": "candidate_only",
+      "captured_at": "2026-06-09T14:28:12+07:00"
+    },
+    {
+      "key": "instagram_recent_post_sample_count",
+      "label": {
+        "id": "Posting IG resmi dibaca",
+        "en": "Official IG posts read"
+      },
+      "value": 12,
+      "format": "number",
+      "status": "candidate_only",
+      "captured_at": "2026-06-09T15:08:13+07:00"
+    },
+    {
+      "key": "instagram_screening_recap_plays",
+      "label": {
+        "id": "Pemutaran recap screening",
+        "en": "Screening recap plays"
+      },
+      "value": 11789,
+      "format": "number",
+      "status": "candidate_only",
+      "captured_at": "2026-06-09T15:08:13+07:00"
+    },
+    {
+      "key": "instagram_screening_comment_sample_size",
+      "label": {
+        "id": "Komentar screening dibaca",
+        "en": "Screening comments read"
+      },
+      "value": 7,
+      "format": "number",
+      "status": "candidate_only",
+      "captured_at": "2026-06-07T19:43:15+07:00"
+    },
+    {
+      "key": "instagram_hashtag_candidate_results",
+      "label": {
+        "id": "Kandidat hashtag IG",
+        "en": "IG hashtag candidates"
+      },
+      "value": 10,
+      "format": "number",
+      "status": "candidate_only",
+      "captured_at": "2026-06-07T21:11:12+07:00"
+    },
+    {
+      "key": "instagram_top_pickup_candidate_plays",
+      "label": {
+        "id": "Pickup kandidat tertinggi",
+        "en": "Top pickup candidate plays"
+      },
+      "value": 68460,
+      "format": "number",
+      "status": "candidate_only",
+      "captured_at": "2026-06-07T21:11:12+07:00"
+    }
+  ],
+  "signals": [
+    {
+      "key": "awareness",
+      "label": {
+        "id": "Jangkauan",
+        "en": "Awareness"
+      },
+      "question": {
+        "id": "Apakah orang tahu film ini ada?",
+        "en": "Do people know the film exists?"
+      },
+      "state": "mulai_bergerak",
+      "read": {
+        "id": "Perhatian lebih nyata setelah trailer, screening, aksi Car Free Day, kandidat press publik, dan pickup hashtag kandidat. Ini masih bukti visibilitas, belum bukti orang akan datang menonton.",
+        "en": "Attention is more visible after the trailer, screening, Car Free Day activation, public press candidates, and candidate hashtag pickup. This is still visibility evidence, not proof that people will attend."
+      }
+    },
+    {
+      "key": "message_clarity",
+      "label": {
+        "id": "Kejelasan Pesan",
+        "en": "Message Clarity"
+      },
+      "question": {
+        "id": "Apakah orang paham kenapa mereka perlu menonton?",
+        "en": "Do people understand why they should watch?"
+      },
+      "state": "lemah",
+      "read": {
+        "id": "Tema survivor, dukungan, dan berani bersuara makin jelas. Tetapi copy consistency tetap risiko taktis: tanggal 2036/April, variasi judul, atau hashtag yang salah bisa membelah perhatian.",
+        "en": "The survivor, support, and speaking-up themes are clearer. But copy consistency remains a tactical risk: wrong dates, title variants, or wrong hashtags can split attention."
+      }
+    },
+    {
+      "key": "trust",
+      "label": {
+        "id": "Kepercayaan",
+        "en": "Trust"
+      },
+      "question": {
+        "id": "Apakah orang percaya film ini layak diberi waktu?",
+        "en": "Do people believe the film is worth their time?"
+      },
+      "state": "bergerak",
+      "read": {
+        "id": "Trust makin punya bahan: recap screening dan komentar menyebut film inspiratif serta jangan ga nonton. Ini membantu belief, tetapi sampelnya kecil.",
+        "en": "Trust has more material: the screening recap and comments include an inspiring-film read and a do-not-miss-it phrase. This helps belief, but the sample is small."
+      }
+    },
+    {
+      "key": "intent",
+      "label": {
+        "id": "Niat Menonton",
+        "en": "Intent"
+      },
+      "question": {
+        "id": "Apakah minat mulai berubah menjadi rencana menonton?",
+        "en": "Is interest becoming a plan to watch?"
+      },
+      "state": "lemah",
+      "read": {
+        "id": "Ada sinyal niat awal, bukan bukti kuat: satu komentar meminta special screening Semarang dan satu komentar mendorong jangan ga nonton. Yang masih kurang: jadwal, tiket, nobar, dan rencana menonton yang berulang.",
+        "en": "There is an early intent signal, not strong proof: one comment asks for a Semarang special screening and one pushes a do-not-miss-it phrase. Still missing: repeated schedule, ticket, group-viewing, and viewing-plan language."
+      }
+    },
+    {
+      "key": "community_movement",
+      "label": {
+        "id": "Gerakan Komunitas",
+        "en": "Community Movement"
+      },
+      "question": {
+        "id": "Apakah kehadiran penonton mulai diorganisir?",
+        "en": "Is turnout being organized?"
+      },
+      "state": "belum_terbaca",
+      "read": {
+        "id": "Screening dan march menunjukkan aktivitas lapangan. Permintaan Semarang adalah kandidat kota, tetapi belum menjadi komitmen komunitas sampai ada PIC, tanggal, lokasi, atau estimasi orang.",
+        "en": "The screening and march show field activity. The Semarang request is a candidate city signal, but it is not a community commitment until there is an owner, date, location, or estimated attendance."
+      }
+    }
+  ],
+  "checkpoints": [
+    {
+      "date": "2026-06-03",
+      "label": {
+        "id": "3 Juni",
+        "en": "Jun 3"
+      },
+      "purpose": {
+        "id": "Baca awal: perhatian sudah ada, tetapi niat menonton belum cukup terbukti.",
+        "en": "Early read: attention exists, but viewing intent is not proven enough yet."
+      }
+    },
+    {
+      "date": "2026-06-08",
+      "label": {
+        "id": "8 Juni",
+        "en": "Jun 8"
+      },
+      "purpose": {
+        "id": "Cek utama: apakah perhatian berubah menjadi niat menonton dan gerakan komunitas?",
+        "en": "Major check: is attention becoming viewing intent and community movement?"
+      }
+    },
+    {
+      "date": "2026-06-18",
+      "label": {
+        "id": "Hari 1",
+        "en": "Day 1"
+      },
+      "purpose": {
+        "id": "Uji nyata: apakah sinyal sebelum rilis berubah menjadi penonton Hari 1?",
+        "en": "Proof moment: did prerelease signals become Day 1 audience?"
+      }
+    },
+    {
+      "date": "2026-06-21",
+      "label": {
+        "id": "Hari 4",
+        "en": "Day 4"
+      },
+      "purpose": {
+        "id": "Uji tahan: apakah film bertahan setelah dorongan awal?",
+        "en": "Hold test: did the film sustain after the initial push?"
+      }
+    }
+  ],
+  "public_sources": [
+    {
+      "label": {
+        "id": "Akun resmi Instagram",
+        "en": "Official Instagram account"
+      },
+      "url": "https://www.instagram.com/saatakubersuara/"
+    },
+    {
+      "label": {
+        "id": "Trailer resmi Instagram",
+        "en": "Official Instagram trailer"
+      },
+      "url": "https://www.instagram.com/p/DZCtTgWBYW-/"
+    },
+    {
+      "label": {
+        "id": "Recap special screening",
+        "en": "Special screening recap"
+      },
+      "url": "https://www.instagram.com/p/DZP_qG0BgzK/"
+    },
+    {
+      "label": {
+        "id": "Laman Lembaga Sensor Film",
+        "en": "Film Censorship Board listing"
+      },
+      "url": "https://lsf.go.id/en/film/saat-aku-bersuara/1180"
+    },
+    {
+      "label": {
+        "id": "Artikel RRI",
+        "en": "RRI article"
+      },
+      "url": "https://rri.co.id/jakarta/hiburan/2462987/film-saat-aku-bersuara-membawa-kisah-perjuangan-perempuan"
+    },
+    {
+      "label": {
+        "id": "Artikel Inforadar",
+        "en": "Inforadar article"
+      },
+      "url": "https://inforadar.disway.id//movie/read/685581/angkat-isu-penyintas-kekerasan-seksual-film-saat-aku-bersuara-siap-tayang-juni-2026"
+    }
+  ]
+}

@@ -1,0 +1,1810 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Intelijen peluncuran SAAT AKU BERSUARA">
+    <title>SAAT AKU BERSUARA | Intelijen Peluncuran</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --bg: #eef2f1;
+            --surface: #ffffff;
+            --surface-soft: #f7f9f8;
+            --ink: #17211f;
+            --ink-soft: #4a5a56;
+            --muted: #71807c;
+            --line: #d9e1df;
+            --line-strong: #c1cdca;
+            --forest: #244b43;
+            --forest-soft: #e0ece9;
+            --blue: #42677a;
+            --blue-soft: #e5eef2;
+            --gold: #986828;
+            --gold-soft: #f5ecdd;
+            --warn: #9a5b30;
+            --warn-soft: #f8ece4;
+            --shadow: 0 14px 36px rgba(26, 47, 43, 0.08);
+        }
+
+        * { box-sizing: border-box; }
+
+        html {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.55;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        button, summary { font: inherit; }
+
+        .shell {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .topbar {
+            border-bottom: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.86);
+        }
+
+        .topbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 58px;
+            gap: 16px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            min-width: 0;
+        }
+
+        .brand-name {
+            color: var(--forest);
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .brand-context {
+            color: var(--muted);
+            font-size: 11px;
+            font-weight: 750;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .lang-toggle {
+            min-width: 78px;
+            border: 1px solid var(--line-strong);
+            border-radius: 999px;
+            padding: 3px;
+            color: var(--forest);
+            background: var(--surface);
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 850;
+            letter-spacing: 1px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+        }
+
+        .lang-toggle span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 24px;
+            border-radius: 999px;
+            color: var(--muted);
+        }
+
+        .lang-toggle span.active {
+            color: #fff;
+            background: var(--forest);
+        }
+
+        .hero {
+            padding: 34px 0 18px;
+        }
+
+        .eyebrow,
+        .section-label,
+        .panel-label {
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 850;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            max-width: 820px;
+            margin: 9px 0 9px;
+            color: var(--ink);
+            font-size: clamp(34px, 6vw, 62px);
+            font-weight: 920;
+            letter-spacing: 0;
+            line-height: 1.02;
+        }
+
+        .hero-copy {
+            max-width: 730px;
+            margin: 0;
+            color: var(--ink-soft);
+            font-size: 16px;
+            overflow-wrap: anywhere;
+        }
+
+        .hero-verdict {
+            display: grid;
+            gap: 4px;
+            width: min(760px, 100%);
+            margin: 12px 0 0;
+            padding: 10px 0 10px 16px;
+            border-left: 3px solid var(--gold);
+            border-radius: 0;
+            background: transparent;
+            color: var(--ink-soft);
+            font-size: 16px;
+            line-height: 1.35;
+            box-shadow: none;
+        }
+
+        .hero-verdict strong {
+            color: var(--ink);
+            font-weight: 950;
+        }
+
+        .verdict-label {
+            color: var(--gold);
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .verdict-strong {
+            color: var(--ink);
+            font-size: clamp(20px, 2vw, 26px);
+            font-weight: 950;
+            line-height: 1.08;
+        }
+
+        .verdict-copy {
+            max-width: 720px;
+            color: var(--ink-soft);
+            font-size: clamp(14px, 1.25vw, 17px);
+            line-height: 1.4;
+        }
+
+        .verdict-mark {
+            color: var(--ink);
+            font-weight: 850;
+            text-decoration-line: underline;
+            text-decoration-color: rgba(152, 104, 40, 0.55);
+            text-decoration-thickness: 3px;
+            text-underline-offset: 4px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid var(--line-strong);
+            border-radius: 999px;
+            padding: 5px 9px;
+            color: var(--ink-soft);
+            background: rgba(255, 255, 255, 0.72);
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .pill.phase {
+            border-color: #d6c49f;
+            color: var(--gold);
+            background: var(--gold-soft);
+        }
+
+        .trailer {
+            position: relative;
+            min-height: 124px;
+            overflow: hidden;
+            border: 1px solid var(--line-strong);
+            border-radius: 8px;
+            background: #203b36;
+            box-shadow: var(--shadow);
+        }
+
+        .trailer img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 260px;
+            object-fit: cover;
+        }
+
+        .trailer-overlay,
+        .trailer-empty {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 18px;
+            color: #fff;
+            background: rgba(19, 42, 37, 0.88);
+        }
+
+        .trailer-overlay {
+            min-height: 184px;
+            padding: 22px;
+        }
+
+        .trailer-empty {
+            min-height: 148px;
+            padding: 26px;
+        }
+
+        .trailer img + .trailer-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(16, 37, 33, 0.58);
+        }
+
+        .trailer-kicker {
+            color: #d8bd84;
+            font-size: 11px;
+            font-weight: 850;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .trailer-title {
+            max-width: 680px;
+            margin-top: 9px;
+            font-size: 25px;
+            font-weight: 900;
+            line-height: 1.12;
+        }
+
+        .trailer-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.58);
+            border-radius: 999px;
+            padding: 8px 12px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 850;
+        }
+
+        .main {
+            display: grid;
+            gap: 24px;
+            padding: 24px 0 54px;
+        }
+
+        .radar-map {
+            display: grid;
+            gap: 20px;
+            padding: 27px 22px 20px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface);
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .guide-title {
+            margin: 0;
+            color: var(--ink);
+            font-size: 31px;
+            font-weight: 950;
+            letter-spacing: 0;
+            line-height: 1.1;
+        }
+
+        .radar-summary {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+            gap: 1px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--line);
+        }
+
+        .radar-summary-card {
+            padding: 16px;
+            background: #fcfdfd;
+        }
+
+        .radar-summary-label {
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .radar-summary-title {
+            margin-top: 7px;
+            color: var(--ink);
+            font-size: 24px;
+            font-weight: 950;
+            line-height: 1.08;
+        }
+
+        .radar-summary-copy {
+            margin-top: 7px;
+            color: var(--ink-soft);
+            font-size: 13px;
+            line-height: 1.45;
+        }
+
+        .evidence-status {
+            display: grid;
+            gap: 8px;
+            align-content: center;
+            padding: 16px;
+            background: var(--surface-soft);
+        }
+
+        .evidence-status-row {
+            display: flex;
+            gap: 8px;
+            align-items: baseline;
+            color: var(--ink-soft);
+            font-size: 12px;
+            line-height: 1.35;
+        }
+
+        .evidence-status-tag {
+            min-width: 82px;
+            color: var(--forest);
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .radar-map-copy {
+            max-width: 790px;
+            margin: 0 auto;
+            color: var(--ink-soft);
+            font-size: 16px;
+            line-height: 1.55;
+        }
+
+        .radar-map-copy span {
+            display: block;
+        }
+
+        .radar-map-copy span + span {
+            margin-top: 2px;
+        }
+
+        .guide-flow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            max-width: 880px;
+            margin: 2px auto 0;
+        }
+
+        .guide-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            min-width: 0;
+            min-height: 34px;
+            padding: 7px 11px;
+            border: 1px solid var(--line-strong);
+            border-radius: 999px;
+            background: var(--surface-soft);
+            color: var(--ink);
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .guide-chip-number {
+            color: var(--gold);
+            font-size: 10px;
+            font-weight: 950;
+            letter-spacing: 0.08em;
+        }
+
+        .guide-arrow {
+            align-self: center;
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .radar-map-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 1px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--line);
+        }
+
+        .radar-step {
+            min-height: 118px;
+            padding: 13px;
+            background: #fcfdfd;
+        }
+
+        .radar-step-number {
+            margin-bottom: 8px;
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+        }
+
+        .radar-step-name {
+            color: var(--ink);
+            font-size: 15px;
+            font-weight: 900;
+            line-height: 1.15;
+        }
+
+        .radar-step-question {
+            margin-top: 6px;
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.35;
+        }
+
+        .radar-step-answer {
+            margin-top: 9px;
+            color: var(--ink-soft);
+            font-size: 12px;
+            font-weight: 800;
+            line-height: 1.35;
+        }
+
+        .sign-stack {
+            display: grid;
+            gap: 13px;
+            text-align: left;
+        }
+
+        .sign-card {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-left: 5px solid var(--line-strong);
+            border-radius: 8px;
+            background: var(--surface);
+            box-shadow: none;
+            transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+        }
+
+        .sign-card[data-tone="moving"] { border-left-color: #2f7d65; }
+        .sign-card[data-tone="watch"] { border-left-color: #986828; }
+        .sign-card[data-tone="action"] { border-left-color: #42677a; }
+        .sign-card[data-tone="weak"] { border-left-color: #9a5b30; }
+        .sign-card[data-tone="blocked"] { border-left-color: #8c5252; }
+
+        .sign-card.active {
+            border-color: #d6c49f;
+            border-left-color: var(--gold);
+            background: #fcfbf8;
+            box-shadow: 0 14px 34px rgba(36, 75, 67, 0.08);
+        }
+
+        .sign-card:not(.active):hover {
+            border-color: var(--line-strong);
+            background: #fcfdfd;
+        }
+
+        .sign-button {
+            width: 100%;
+            position: relative;
+            display: grid;
+            grid-template-columns: 44px minmax(0, 1fr) minmax(184px, auto) 18px;
+            gap: 17px;
+            align-items: center;
+            padding: 18px 20px;
+            border: 0;
+            background: transparent;
+            color: inherit;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .sign-number {
+            color: var(--gold);
+            font-size: 14px;
+            font-weight: 950;
+            letter-spacing: 0.08em;
+        }
+
+        .sign-title {
+            margin: 0 0 5px;
+            color: var(--ink);
+            font-size: 24px;
+            font-weight: 950;
+            line-height: 1.1;
+        }
+
+        .sign-question {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.35;
+        }
+
+        .sign-answer {
+            justify-self: end;
+            max-width: 260px;
+            padding: 7px 12px;
+            border: 1px solid var(--line-strong);
+            border-radius: 999px;
+            color: var(--forest);
+            background: var(--surface-soft);
+            font-size: 12px;
+            font-weight: 900;
+            line-height: 1.15;
+            text-align: center;
+        }
+
+        .sign-card[data-tone="moving"] .sign-answer {
+            border-color: #abcfc3;
+            color: #1f6652;
+            background: #eef8f5;
+        }
+
+        .sign-card[data-tone="weak"] .sign-answer,
+        .sign-card[data-tone="blocked"] .sign-answer {
+            border-color: #e2b39c;
+            color: #8a4326;
+            background: #fff5ef;
+        }
+
+        .sign-card[data-tone="action"] .sign-answer {
+            border-color: #b9cbd5;
+            color: #31596d;
+            background: #eef5f8;
+        }
+
+        .sign-summary {
+            color: var(--ink-soft);
+            font-size: 13px;
+            font-weight: 650;
+            line-height: 1.45;
+        }
+
+        .sign-status {
+            color: var(--gold);
+            font-size: 18px;
+            font-weight: 950;
+            line-height: 1;
+            transition: transform 0.18s ease, color 0.18s ease;
+        }
+
+        .sign-card.active .sign-status {
+            color: var(--forest);
+            transform: rotate(45deg);
+        }
+
+        .sign-details {
+            padding: 0 20px 20px 81px;
+        }
+
+        .sign-card:not(.active) .sign-details {
+            display: none;
+        }
+
+        .sign-copy {
+            max-width: 850px;
+            margin: 0;
+            color: var(--ink-soft);
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .sign-bullets {
+            display: grid;
+            gap: 7px;
+            max-width: 880px;
+            margin: 0;
+            padding-left: 18px;
+            color: var(--ink-soft);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .sign-bullets strong {
+            color: var(--ink);
+        }
+
+        .sign-note {
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .source-strip {
+            display: block;
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--line);
+        }
+
+        .source-note {
+            color: var(--ink-soft);
+            font-size: 12px;
+            line-height: 1.45;
+        }
+
+        .source-note strong {
+            color: var(--forest);
+            font-weight: 900;
+        }
+
+        .compact-actions {
+            display: grid;
+            gap: 1px;
+            overflow: hidden;
+            margin-top: 14px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--line);
+        }
+
+        .compact-action {
+            display: grid;
+            grid-template-columns: 32px minmax(0, 1fr) minmax(190px, 0.72fr);
+            gap: 12px;
+            padding: 13px;
+            background: #fcfdfd;
+        }
+
+        .compact-action-index {
+            color: var(--gold);
+            font-weight: 950;
+        }
+
+        .compact-action-owner {
+            color: var(--forest);
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .compact-action-text {
+            margin-top: 3px;
+            color: var(--ink);
+            font-size: 14px;
+            font-weight: 760;
+            line-height: 1.45;
+        }
+
+        .compact-action-proof {
+            color: var(--ink-soft);
+            font-size: 12px;
+            line-height: 1.45;
+        }
+
+        .metric-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .metric-chip {
+            min-width: 112px;
+            padding: 10px 12px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface-soft);
+        }
+
+        .metric-chip-name {
+            color: var(--muted);
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .metric-chip-value {
+            margin-top: 4px;
+            color: var(--ink);
+            font-size: 19px;
+            font-weight: 950;
+            line-height: 1;
+        }
+
+        .signal-rows {
+            display: grid;
+            gap: 1px;
+            overflow: hidden;
+            margin-top: 14px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--line);
+        }
+
+        .signal-row {
+            display: grid;
+            grid-template-columns: minmax(150px, 0.24fr) minmax(0, 1fr) minmax(118px, max-content);
+            gap: 16px;
+            align-items: center;
+            padding: 14px 16px;
+            background: #fcfdfd;
+        }
+
+        .signal-row-name {
+            color: var(--ink);
+            font-size: 14px;
+            font-weight: 900;
+            line-height: 1.25;
+        }
+
+        .signal-row-state {
+            justify-self: end;
+            min-width: 112px;
+            border: 1px solid var(--line-strong);
+            border-radius: 999px;
+            padding: 5px 10px;
+            color: var(--ink-soft);
+            background: var(--surface);
+            font-size: 10px;
+            font-weight: 850;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .signal-row-read {
+            color: var(--ink-soft);
+            font-size: 13px;
+            line-height: 1.45;
+        }
+
+        .public-source-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .public-source-link {
+            display: inline-flex;
+            align-items: center;
+            min-height: 30px;
+            padding: 6px 10px;
+            border: 1px solid var(--line-strong);
+            border-radius: 999px;
+            color: var(--forest);
+            background: var(--surface-soft);
+            font-size: 11px;
+            font-weight: 850;
+            text-decoration: none;
+        }
+
+        .overview {
+            display: grid;
+            gap: 1px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--line);
+            box-shadow: var(--shadow);
+        }
+
+        .overview-panel {
+            padding: 20px;
+            background: var(--surface);
+        }
+
+        .overview-panel.primary {
+            background: #fcfdfd;
+        }
+
+        .panel-title {
+            margin: 8px 0 5px;
+            color: var(--ink);
+            font-size: 23px;
+            font-weight: 900;
+            line-height: 1.14;
+        }
+
+        .panel-copy {
+            margin: 0;
+            color: var(--ink-soft);
+            font-size: 14px;
+        }
+
+        section > .section-label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .actions {
+            overflow: hidden;
+            border-top: 1px solid var(--line-strong);
+            border-bottom: 1px solid var(--line-strong);
+        }
+
+        .action {
+            display: grid;
+            grid-template-columns: 42px minmax(0, 1fr) minmax(180px, 0.72fr);
+            gap: 16px;
+            align-items: start;
+            padding: 17px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .action:last-child { border-bottom: 0; }
+
+        .action-number {
+            color: var(--gold);
+            font-size: 15px;
+            font-weight: 900;
+        }
+
+        .action-owner {
+            margin-bottom: 3px;
+            color: var(--forest);
+            font-size: 11px;
+            font-weight: 850;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .action-text {
+            color: var(--ink);
+            font-size: 15px;
+            font-weight: 760;
+        }
+
+        .action-proof {
+            color: var(--ink-soft);
+            font-size: 12px;
+        }
+
+        .evidence {
+            display: grid;
+            gap: 16px;
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface);
+        }
+
+        .metric-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .metric {
+            width: 128px;
+            min-height: 128px;
+            aspect-ratio: 1;
+            padding: 13px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: var(--surface-soft);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .metric-name {
+            color: var(--muted);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.7px;
+            text-transform: uppercase;
+        }
+
+        .metric-value {
+            margin-top: 7px;
+            color: var(--ink);
+            font-size: 22px;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .empty-note {
+            padding: 14px 16px;
+            border-left: 3px solid var(--blue);
+            color: var(--ink-soft);
+            background: var(--blue-soft);
+            font-size: 14px;
+        }
+
+        .waiting-count {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .signal-list {
+            overflow: hidden;
+            border-top: 1px solid var(--line-strong);
+        }
+
+        details.signal {
+            border-bottom: 1px solid var(--line);
+            background: transparent;
+        }
+
+        details.signal summary {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 14px;
+            align-items: center;
+            padding: 15px 0;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        details.signal summary::-webkit-details-marker { display: none; }
+
+        .signal-name {
+            color: var(--ink);
+            font-size: 15px;
+            font-weight: 850;
+        }
+
+        .signal-question {
+            margin-top: 2px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .signal-state {
+            border: 1px solid var(--line-strong);
+            border-radius: 999px;
+            padding: 4px 8px;
+            color: var(--ink-soft);
+            background: var(--surface);
+            font-size: 10px;
+            font-weight: 850;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+
+        .signal-read {
+            max-width: 800px;
+            padding: 0 0 15px;
+            color: var(--ink-soft);
+            font-size: 13px;
+        }
+
+        .checkpoint-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--line);
+        }
+
+        .checkpoint {
+            min-height: 126px;
+            padding: 14px;
+            background: var(--surface);
+        }
+
+        .checkpoint-date {
+            color: var(--forest);
+            font-size: 17px;
+            font-weight: 900;
+        }
+
+        .checkpoint-copy {
+            margin-top: 8px;
+            color: var(--ink-soft);
+            font-size: 12px;
+        }
+
+        .cinema {
+            display: none;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface);
+        }
+
+        .checkpoint-section {
+            display: none;
+        }
+
+        .cinema summary {
+            padding: 15px 17px;
+            cursor: pointer;
+            color: var(--forest);
+            font-size: 13px;
+            font-weight: 850;
+        }
+
+        .cinema p {
+            max-width: 830px;
+            margin: 0;
+            padding: 0 17px 17px;
+            color: var(--ink-soft);
+            font-size: 13px;
+        }
+
+        .footer {
+            padding: 18px 0 30px;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .error {
+            margin-top: 24px;
+            padding: 18px;
+            border: 1px solid #e7cfc0;
+            border-radius: 8px;
+            color: #733d24;
+            background: var(--warn-soft);
+        }
+
+        @media (min-width: 760px) {
+            .overview { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 720px) {
+            html,
+            body {
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+            body * {
+                min-width: 0;
+            }
+            .shell {
+                width: 100%;
+                max-width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+            .topbar-inner,
+            main.shell,
+            .hero,
+            .trailer,
+            .radar-map,
+            .sign-card {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+            .topbar-inner {
+                min-width: 0;
+            }
+            .lang-toggle {
+                flex: 0 0 auto;
+                width: 70px;
+                min-width: 70px;
+            }
+            .hero { padding: 31px 0 20px; }
+            .hero-verdict {
+                gap: 3px;
+                width: auto;
+                max-width: 100%;
+                padding: 10px 12px 10px 13px;
+            }
+            .verdict-strong { font-size: 20px; }
+            .verdict-copy { font-size: 14px; }
+            .eyebrow,
+            .section-label,
+            .panel-label {
+                overflow-wrap: anywhere;
+            }
+            h1 {
+                max-width: 340px;
+                font-size: 30px;
+                line-height: 1.05;
+            }
+            .hero-meta {
+                max-width: 100%;
+            }
+            .pill {
+                max-width: 100%;
+                white-space: normal;
+            }
+            .brand-context { display: none; }
+            .radar-summary { grid-template-columns: 1fr; }
+            .evidence-status-row {
+                display: grid;
+                gap: 3px;
+            }
+            .evidence-status-tag {
+                min-width: 0;
+            }
+            .radar-map-grid { grid-template-columns: 1fr; }
+            .radar-step { min-height: 0; }
+            .radar-map {
+                padding: 21px 14px 16px;
+            }
+            .guide-title {
+                font-size: 26px;
+            }
+            .radar-map-copy {
+                font-size: 14px;
+                max-width: 100%;
+                overflow-wrap: anywhere;
+                text-align: left;
+            }
+            .radar-map-copy span {
+                width: 100%;
+                max-width: 100%;
+                white-space: normal;
+            }
+            .guide-flow {
+                display: grid;
+                grid-template-columns: 1fr;
+                width: 100%;
+                max-width: 100%;
+                text-align: left;
+            }
+            .guide-arrow {
+                display: none;
+            }
+            .guide-chip {
+                width: 100%;
+                border-radius: 8px;
+            }
+            .sign-card {
+                display: block;
+            }
+            .sign-button {
+                grid-template-columns: 32px minmax(0, 1fr);
+                gap: 9px;
+                padding: 15px;
+                align-items: start;
+            }
+            .sign-status {
+                position: static;
+                display: inline-flex;
+                margin: 10px 0 0 41px;
+                width: fit-content;
+                max-width: calc(100% - 41px);
+            }
+            .sign-answer {
+                grid-column: 2;
+                justify-self: start;
+                max-width: 100%;
+                text-align: left;
+                overflow-wrap: anywhere;
+            }
+            .sign-title { font-size: 22px; }
+            .sign-details {
+                padding: 0 15px 15px 56px;
+                max-width: 100%;
+                overflow-wrap: anywhere;
+            }
+            .source-row {
+                display: grid;
+                gap: 3px;
+            }
+            .compact-action {
+                grid-template-columns: 26px minmax(0, 1fr);
+                gap: 9px;
+            }
+            .compact-action-proof {
+                grid-column: 2;
+            }
+            .signal-row {
+                grid-template-columns: 1fr auto;
+                gap: 6px;
+                align-items: start;
+            }
+            .signal-row-state {
+                grid-column: 2;
+                grid-row: 1;
+                width: fit-content;
+                min-width: 0;
+            }
+            .signal-row-read { grid-column: 1 / -1; }
+            .trailer-overlay,
+            .trailer-empty {
+                min-height: 174px;
+                align-items: flex-start;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding: 20px;
+            }
+            .trailer-empty { min-height: 148px; }
+            .trailer-title { font-size: 21px; }
+            .action {
+                grid-template-columns: 30px minmax(0, 1fr);
+                gap: 10px;
+            }
+            .action-proof {
+                grid-column: 2;
+                padding-top: 3px;
+            }
+            .metric { width: 100%; min-height: 104px; }
+            .checkpoint-grid { grid-template-columns: 1fr 1fr; }
+            .checkpoint { min-height: 112px; }
+        }
+
+        @media (max-width: 540px) {
+            .shell {
+                width: min(342px, calc(100% - 24px));
+                max-width: min(342px, calc(100% - 24px));
+                margin-left: 12px;
+                margin-right: 0;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .topbar-inner,
+            main.shell,
+            .hero,
+            .trailer,
+            .radar-map,
+            .sign-card {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="shell topbar-inner">
+            <div class="brand">
+                <span class="brand-name">AIGLE</span>
+                <span class="brand-context" data-copy="brandContext">Intelijen peluncuran</span>
+            </div>
+            <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">ID / EN</button>
+        </div>
+    </header>
+
+    <main class="shell">
+        <section class="hero">
+            <h1 id="title">SAAT AKU BERSUARA</h1>
+            <p class="hero-verdict" id="heroVerdict"></p>
+            <div class="hero-meta">
+                <span class="pill phase" id="phase"></span>
+                <span class="pill" id="release"></span>
+            </div>
+        </section>
+
+        <section class="trailer" id="trailer"></section>
+
+        <div class="main" id="content" hidden>
+            <section class="radar-map">
+                <h2 class="guide-title" data-copy="guideTitle">Lima Tanda Tonton</h2>
+                <p class="radar-map-copy">
+                    <span data-copy="fiveSignsCopy1"></span>
+                    <span data-copy="fiveSignsCopy2"></span>
+                </p>
+                <div class="guide-flow" id="guideFlow" aria-label="Urutan Lima Tanda Tonton"></div>
+                <div class="sign-stack" id="signStack"></div>
+            </section>
+        </div>
+
+        <div class="error" id="error" hidden></div>
+    </main>
+
+    <footer class="footer">
+        <div class="shell">
+            <span data-copy="footer">Sinyal, bukan prediksi. Pembacaan akan diperbarui saat bukti baru masuk.</span>
+        </div>
+    </footer>
+
+    <script>
+        (() => {
+            "use strict";
+
+            let lang = localStorage.getItem("sab_public_lang") || "id";
+            let data = null;
+
+            const COPY = {
+                id: {
+                    brandContext: "Radar SAB",
+                    eyebrow: "Lima Tanda Tonton — lima tanda sebelum ambil keputusan",
+                    guideTitle: "Lima Tanda Tonton",
+                    heroVerdictStrong: "Bergerak lebih nyata.",
+                    heroVerdictCopy: "Hambatan utama: niat menonton. Fokus: ubah perhatian menjadi rencana nonton.",
+                    fiveSignsCopy1: "Satu pertanyaan besar: apakah perhatian mulai berubah menjadi penonton yang benar-benar datang?",
+                    fiveSignsCopy2: "Baca berurutan: kondisi hari ini, hambatan, aksi, bukti, lalu realitas pasar.",
+                    verified: "Terverifikasi",
+                    verifiedCopy: "Angka trailer IG cocok dengan snapshot visual.",
+                    candidate: "Kandidat",
+                    candidateCopy: "Komentar dan TikTok masih perlu dibaca sebagai sinyal awal.",
+                    todayRead: "Hari Ini",
+                    nextFocus: "Bottleneck",
+                    actions: "Aksi 48 Jam",
+                    actionAnswer: "3 tindakan praktis",
+                    expected: "Bukti yang dicari",
+                    signals: "Sinyal",
+                    signalAnswer: "Niat + komunitas",
+                    signalCopy: "Bukti publik dipakai di sini: angka menunjukkan perhatian; komentar dan pickup organik menunjukkan apakah perhatian mulai berubah menjadi niat.",
+                    cinemaSummary: "Realitas Pasar",
+                    marketAnswer: "Perhatian ada; permintaan belum terbukti",
+                    footer: "Sinyal, bukan prediksi. Pembacaan akan diperbarui saat bukti baru masuk.",
+                    release: "Rilis",
+                    daysLeft: "hari lagi",
+                    officialTrailer: "Trailer resmi",
+                    pageTitleSuffix: "Intelijen Peluncuran",
+                    waitingTrailer: "Trailer resmi belum tayang",
+                    trailerHelp: "Begitu URL resmi masuk, halaman ini akan menampilkan trailer dan angka publik pertama.",
+                    watchTrailer: "Tonton trailer",
+                    waitingMetrics: "Belum ada angka publik. Trailer resmi belum tayang.",
+                    moreSources: "sumber lain masih menunggu jalur yang stabil.",
+                    noMoreSources: "Semua sumber publik terpilih sudah masuk.",
+                    unavailable: "Belum terbaca",
+                    loadError: "Halaman belum dapat memuat data publik SAB."
+                },
+                en: {
+                    brandContext: "SAB Radar",
+                    eyebrow: "Release watch",
+                    guideTitle: "Five Turnout Signs",
+                    heroVerdictStrong: "Moving more visibly.",
+                    heroVerdictCopy: "Main bottleneck: viewing intent. Focus: turn attention into viewing plans.",
+                    fiveSignsCopy1: "One big question: is attention starting to become real audience turnout?",
+                    fiveSignsCopy2: "Read in order: current state, blocker, action, evidence, then market reality.",
+                    verified: "Verified",
+                    verifiedCopy: "IG trailer numbers match the visual snapshot.",
+                    candidate: "Candidate",
+                    candidateCopy: "Comments and TikTok should still be read as early signals.",
+                    todayRead: "Today",
+                    nextFocus: "Bottleneck",
+                    actions: "48-Hour Actions",
+                    actionAnswer: "3 practical actions",
+                    expected: "Evidence to look for",
+                    signals: "Signals",
+                    signalAnswer: "Intent + community",
+                    signalCopy: "Public evidence belongs here: numbers show attention; comments and organic pickup show whether attention is becoming intent.",
+                    cinemaSummary: "Market Reality",
+                    marketAnswer: "Attention exists; demand not proven",
+                    footer: "Signals, not predictions. The read will update as new evidence arrives.",
+                    release: "Release",
+                    daysLeft: "days left",
+                    officialTrailer: "Official trailer",
+                    pageTitleSuffix: "Launch Intelligence",
+                    waitingTrailer: "Official trailer is not live yet",
+                    trailerHelp: "Once the official URL arrives, this page will show the trailer and the first public numbers.",
+                    watchTrailer: "Watch trailer",
+                    waitingMetrics: "No public numbers yet. The official trailer is not live.",
+                    moreSources: "other sources are still waiting for a stable path.",
+                    noMoreSources: "All selected public sources have been captured.",
+                    unavailable: "Not readable yet",
+                    loadError: "The page could not load the public SAB data."
+                }
+            };
+
+            const $ = (id) => document.getElementById(id);
+            const text = (key) => COPY[lang][key];
+            const localized = (value) => {
+                if (value == null) return "";
+                if (typeof value === "object") return value[lang] || value.id || value.en || "";
+                return String(value);
+            };
+            const esc = (value) => String(value == null ? "" : value)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+            const formatDate = (value) => {
+                if (!value) return "";
+                return new Intl.DateTimeFormat(lang === "id" ? "id-ID" : "en-US", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric"
+                }).format(new Date(value + "T00:00:00"));
+            };
+            const metricValue = (metric) => {
+                if (metric.format === "score_10") return `${metric.value}/10`;
+                return Number(metric.value).toLocaleString(lang === "id" ? "id-ID" : "en-US");
+            };
+            const daysUntil = (value) => {
+                if (!value) return null;
+                const target = new Date(value + "T00:00:00");
+                const now = new Date();
+                const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+                return Math.ceil((target - today) / 86400000);
+            };
+            const stateLabel = (state) => {
+                const labels = {
+                    id: {
+                        belum_terbaca: "Belum terbaca",
+                        lemah: "Lemah",
+                        bergerak: "Bergerak",
+                        kuat: "Kuat",
+                        belum_sehat: "Belum sehat",
+                        mulai_bergerak: "Mulai bergerak",
+                        sehat: "Sehat"
+                    },
+                    en: {
+                        belum_terbaca: "Not readable",
+                        lemah: "Weak",
+                        bergerak: "Moving",
+                        kuat: "Strong",
+                        belum_sehat: "Not healthy",
+                        mulai_bergerak: "Starting to move",
+                        sehat: "Healthy"
+                    }
+                };
+                return labels[lang][state] || text("unavailable");
+            };
+
+            const radarMapItems = (cockpit) => {
+                const isId = lang === "id";
+                return [
+                    {
+                        name: isId ? "Hari Ini" : "Today",
+                        question: isId ? "Apa yang sedang terjadi?" : "What is happening now?",
+                        answer: cockpit.health.label || stateLabel(cockpit.health.state)
+                    },
+                    {
+                        name: "Bottleneck",
+                        question: isId ? "Apa yang paling menghambat penonton datang?" : "What is most blocking turnout?",
+                        answer: cockpit.focus.label || text("unavailable")
+                    },
+                    {
+                        name: isId ? "Aksi 48 Jam" : "48-Hour Actions",
+                        question: isId ? "Apa yang harus dilakukan sekarang?" : "What should happen next?",
+                        answer: isId ? "3 tindakan praktis" : "3 practical actions"
+                    },
+                    {
+                        name: isId ? "Sinyal" : "Signals",
+                        question: isId ? "Bukti apa yang harus dipantau?" : "What evidence should we watch?",
+                        answer: isId ? "Niat + komunitas" : "Intent + community"
+                    },
+                    {
+                        name: isId ? "Realitas Pasar" : "Market Reality",
+                        question: isId ? "Apakah kondisi luar mendukung penonton datang?" : "Does the outside environment support turnout?",
+                        answer: isId ? "Perhatian ada, permintaan belum terbukti" : "Attention exists, demand not proven"
+                    }
+                ];
+            };
+
+            const renderSourceStrip = () => `
+                <div class="source-strip">
+                    <div class="source-note"><strong>${esc(lang === "id" ? "Mutu bukti" : "Evidence quality")}:</strong> ${esc(text("verified"))} - ${esc(text("verifiedCopy"))} ${esc(text("candidate"))} - ${esc(text("candidateCopy"))}</div>
+                </div>`;
+
+            const renderGuideFlow = () => {
+                const items = lang === "id"
+                    ? ["Hari Ini", "Bottleneck", "Aksi", "Sinyal", "Pasar"]
+                    : ["Today", "Bottleneck", "Action", "Signals", "Market"];
+                return items.map((item, index) => `
+                    <span class="guide-chip">
+                        <span class="guide-chip-number">0${index + 1}</span>
+                        <span>${esc(item)}</span>
+                    </span>
+                    ${index < items.length - 1 ? '<span class="guide-arrow">></span>' : ''}`).join("");
+            };
+
+            const renderActions = (items) => `
+                <div class="compact-actions">
+                    ${items.map((item, index) => `
+                        <article class="compact-action">
+                            <div class="compact-action-index">0${index + 1}</div>
+                            <div>
+                                <div class="compact-action-owner">${esc(item.owner)}</div>
+                                <div class="compact-action-text">${esc(item.action)}</div>
+                            </div>
+                            <div class="compact-action-proof"><strong>${esc(text("expected"))}:</strong> ${esc(item.expected_evidence)}</div>
+                        </article>`).join("")}
+                </div>`;
+
+            const renderMetrics = () => {
+                const availableMetrics = (data.metrics || []).filter((metric) => metric.value != null);
+                if (availableMetrics.length === 0) {
+                    return `<div class="empty-note">${esc(localized(data.readiness_note) || text("waitingMetrics"))}</div>`;
+                }
+                return `
+                    <div class="metric-strip">
+                        ${availableMetrics.map((metric) => `
+                            <article class="metric-chip">
+                                <div class="metric-chip-name">${esc(localized(metric.label))}</div>
+                                <div class="metric-chip-value">${esc(metricValue(metric))}</div>
+                            </article>`).join("")}
+                    </div>`;
+            };
+
+            const renderSignals = () => `
+                <div class="signal-rows">
+                    ${(data.signals || []).map((signal) => `
+                        <article class="signal-row">
+                            <div class="signal-row-name">${esc(localized(signal.label))}</div>
+                            <div class="signal-row-read">${esc(localized(signal.read))}</div>
+                            <span class="signal-row-state">${esc(stateLabel(signal.state))}</span>
+                        </article>`).join("")}
+                </div>`;
+
+            const renderHeroVerdict = (verdict) => {
+                const strong = verdict.strong || text("heroVerdictStrong");
+                const copy = verdict.copy || text("heroVerdictCopy");
+                const markedCopy = esc(copy).replace(
+                    lang === "id" ? "niat menonton" : "viewing intent",
+                    (match) => `<span class="verdict-mark">${match}</span>`
+                );
+                return `
+                    <span class="verdict-label">${esc(lang === "id" ? "Bacaan saat ini" : "Current read")}</span>
+                    <span class="verdict-strong">${esc(strong)}</span>
+                    <span class="verdict-copy">${markedCopy}</span>`;
+            };
+
+            const renderPublicSources = () => {
+                const sources = data.public_sources || [];
+                if (!sources.length) return "";
+                return `
+                    <div class="source-strip">
+                        <div class="source-note"><strong>${esc(lang === "id" ? "Sumber publik" : "Public sources")}:</strong> ${esc(lang === "id" ? "tautan dipilih untuk memeriksa bacaan, bukan arsip lengkap." : "selected links for checking the read, not a full archive.")}</div>
+                        <div class="public-source-links">
+                            ${sources.map((item) => `<a class="public-source-link" href="${esc(item.url)}" target="_blank" rel="noopener">${esc(localized(item.label))}</a>`).join("")}
+                        </div>
+                    </div>`;
+            };
+
+            const renderBullets = (items) => `
+                <ul class="sign-bullets">
+                    ${items.map((item) => `<li>${item}</li>`).join("")}
+                </ul>`;
+
+            const renderSignCard = (number, name, question, answer, summary, bullets, extraHtml, active, tone) => `
+                <article class="sign-card ${active ? "active" : ""}" data-tone="${esc(tone || "watch")}" data-sign-card>
+                    <button class="sign-button" type="button" aria-expanded="${active ? "true" : "false"}">
+                        <div class="sign-number">0${number}</div>
+                        <div>
+                            <h2 class="sign-title">${esc(name)}</h2>
+                            <div class="sign-question">${esc(question)}</div>
+                            <div class="sign-summary">${esc(summary)}</div>
+                        </div>
+                        <div class="sign-answer">${esc(answer)}</div>
+                        <div class="sign-status">+</div>
+                    </button>
+                    <div class="sign-details">
+                        ${renderBullets(bullets)}
+                        ${extraHtml || ""}
+                    </div>
+                </article>`;
+
+            const renderConfiguredCard = (card, index, cockpit) => {
+                let extraHtml = "";
+                if (card.extra === "source") extraHtml = renderSourceStrip();
+                if (card.extra === "actions") extraHtml = renderActions(cockpit.actions || []);
+                if (card.extra === "metrics_signals") extraHtml = renderMetrics() + renderSignals() + renderPublicSources();
+                return renderSignCard(
+                    card.number || index + 1,
+                    card.name || "",
+                    card.question || "",
+                    card.answer || "",
+                    card.summary || "",
+                    card.bullets || [],
+                    extraHtml,
+                    Boolean(card.active),
+                    card.tone || "watch"
+                );
+            };
+
+            const renderSignStack = (cockpit) => {
+                const isId = lang === "id";
+                if (Array.isArray(cockpit.cards) && cockpit.cards.length) {
+                    return cockpit.cards.map((card, index) => renderConfiguredCard(card, index, cockpit)).join("");
+                }
+                return [
+                    renderSignCard(1, text("todayRead"),
+                        isId ? "Apa yang sedang terjadi?" : "What is happening now?",
+                        cockpit.health.label || stateLabel(cockpit.health.state),
+                        isId ? "Screening dan aksi Car Free Day membuat perhatian lebih nyata; rencana menonton belum cukup terbukti." : "Screening and the Car Free Day activation make attention more visible; viewing plans are not proven enough yet.",
+                        isId
+                            ? [
+                                "<strong>Lebih dari trailer:</strong> screening, aksi Car Free Day, dan kandidat press publik membuat perhatian lebih nyata daripada 3 Juni.",
+                                "<strong>Trust mulai punya bahan:</strong> testimoni screening bisa dipakai untuk menunjukkan alasan percaya pada film ini.",
+                                "<strong>Masih belum cukup:</strong> rencana menonton, jadwal, kota, tiket, atau nobar belum terverifikasi kuat.",
+                                "<strong>Kesimpulan:</strong> ini momentum perhatian dan trust, belum bukti demand."
+                            ]
+                            : [
+                                "<strong>Beyond the trailer:</strong> screening, Car Free Day activation, and public press candidates make attention more visible than on Jun 3.",
+                                "<strong>Trust has material:</strong> screening testimonials can show why people should believe in the film.",
+                                "<strong>Still not enough:</strong> viewing plans, schedules, cities, tickets, or group viewing are not strongly verified yet.",
+                                "<strong>Conclusion:</strong> this is attention and trust momentum, not demand proof."
+                            ],
+                        renderSourceStrip(), true, "moving"),
+                    renderSignCard(2, text("nextFocus"),
+                        isId ? "Apa yang paling menghambat penonton datang?" : "What most blocks turnout?",
+                        cockpit.focus.label || text("unavailable"),
+                        isId ? "Perhatian dan trust naik; tindakan penonton belum cukup terlihat." : "Attention and trust are rising; audience action is not visible enough yet.",
+                        isId
+                            ? [
+                                "<strong>Masalahnya bukan perhatian:</strong> SAB sudah punya trailer, screening, aksi Car Free Day, dan press kandidat.",
+                                "<strong>Yang dicari:</strong> mau nonton, ajak keluarga, nobar, tiket, tanggal 18, kota, atau jadwal.",
+                                "<strong>Risiko tambahan:</strong> variasi judul, hashtag, atau tanggal bisa membelah perhatian saat clarity dibutuhkan.",
+                                "<strong>Kenapa penting:</strong> film bisa terasa penting tetapi tetap tidak menjadi rencana."
+                            ]
+                            : [
+                                "<strong>The issue is not attention:</strong> SAB now has trailer, screening, Car Free Day activation, and press candidates.",
+                                "<strong>What we need:</strong> want to watch, bring family, group viewing, tickets, June 18, city, or schedule questions.",
+                                "<strong>Extra risk:</strong> title, hashtag, or date variants can split attention when clarity matters.",
+                                "<strong>Why it matters:</strong> the film can feel important without becoming a plan."
+                            ],
+                        "", false, "blocked"),
+                    renderSignCard(3, text("actions"),
+                        isId ? "Apa yang harus dilakukan sekarang?" : "What should happen now?",
+                        text("actionAnswer"),
+                        isId ? "Tiga tindakan paling praktis untuk 48 jam berikutnya." : "The three most practical moves for the next 48 hours.",
+                        isId
+                            ? ["<strong>Tujuan:</strong> mengubah testimoni, aksi lapangan, dan perhatian publik menjadi alasan serta rencana menonton."]
+                            : ["<strong>Goal:</strong> turn testimonials, field activity, and public attention into reasons and plans to watch."],
+                        renderActions(cockpit.actions || []), false, "action"),
+                    renderSignCard(4, text("signals"),
+                        isId ? "Bukti apa yang harus dipantau?" : "What evidence should we watch?",
+                        text("signalAnswer"),
+                        isId ? "Bukti publik dibaca di sini, bukan sebagai kategori baru." : "Public evidence belongs here, not as a separate category.",
+                        isId
+                            ? [
+                                "<strong>Angka</strong> menunjukkan perhatian, bukan demand.",
+                                "<strong>Komentar event</strong> harus dibaca untuk trust, niat, jadwal, kota, dan tiket.",
+                                "<strong>Organik + hashtag</strong> perlu dipantau sebagai kandidat setelah false positive dibuang."
+                            ]
+                            : [
+                                "<strong>Numbers</strong> show attention, not demand.",
+                                "<strong>Event comments</strong> should be read for trust, intent, schedule, city, and ticket language.",
+                                "<strong>Organic pickup + hashtags</strong> should be watched as candidates after false positives are removed."
+                            ],
+                        renderMetrics() + renderSignals(), false, "watch"),
+                    renderSignCard(5, text("cinemaSummary"),
+                        isId ? "Apakah kondisi luar mendukung penonton datang?" : "Does the outside environment support turnout?",
+                        text("marketAnswer"),
+                        isId ? "Realitas luar lebih mendukung perhatian, tetapi belum membuktikan permintaan." : "The outside environment supports attention more than before, but still does not prove demand.",
+                        isId
+                            ? [
+                                "<strong>Positif:</strong> trailer, screening, aksi Car Free Day, dan press kandidat membuat SAB lebih mudah ditemukan.",
+                                "<strong>Belum cukup:</strong> aktivitas lapangan campaign-led belum otomatis berarti demand organik.",
+                                "<strong>Yang akan meyakinkan:</strong> jadwal/kota/tiket/nobar mulai muncul dari penonton atau komunitas.",
+                                "<strong>Realitas pasar:</strong> perhatian membantu, tetapi rencana menonton dan komitmen nyata yang mengubah pembacaan."
+                            ]
+                            : [
+                                "<strong>Positive:</strong> trailer, screening, Car Free Day activation, and press candidates make SAB easier to discover.",
+                                "<strong>Not enough:</strong> campaign-led field activity is not automatically organic demand.",
+                                "<strong>What would convince:</strong> schedule, city, ticket, or group-viewing language starts appearing from audiences or communities.",
+                                "<strong>Market reality:</strong> attention helps, but viewing plans and real commitments change the read."
+                            ],
+                        "", false, "weak")
+                ].join("");
+            };
+
+            function renderStaticCopy() {
+                document.documentElement.lang = lang;
+                document.querySelectorAll("[data-copy]").forEach((node) => {
+                    node.textContent = text(node.dataset.copy);
+                });
+                $("langToggle").innerHTML = `<span class="${lang === "id" ? "active" : ""}">ID</span><span class="${lang === "en" ? "active" : ""}">EN</span>`;
+                $("langToggle").setAttribute("aria-label", lang === "id" ? "Bahasa aktif: Indonesia. Ganti ke English." : "Current language: English. Switch to Indonesian.");
+            }
+
+            function wireSignCards() {
+                const cards = Array.from(document.querySelectorAll("[data-sign-card]"));
+                cards.forEach((card) => {
+                    const button = card.querySelector(".sign-button");
+                    button.addEventListener("click", () => {
+                        const shouldCollapse = card.classList.contains("active");
+                        cards.forEach((item) => {
+                            const isActive = !shouldCollapse && item === card;
+                            item.classList.toggle("active", isActive);
+                            item.querySelector(".sign-button").setAttribute("aria-expanded", isActive ? "true" : "false");
+                        });
+                    });
+                });
+            }
+
+            function renderTrailer() {
+                const trailer = data.trailer || {};
+                if (trailer.official_url && trailer.thumbnail_url) {
+                    $("trailer").innerHTML = `
+                        <img src="${esc(trailer.thumbnail_url)}" alt="${esc(text("officialTrailer"))}">
+                        <div class="trailer-overlay">
+                            <div>
+                                <div class="trailer-kicker">${esc(text("officialTrailer"))}</div>
+                                <div class="trailer-title">${esc(data.title)}</div>
+                            </div>
+                            <a class="trailer-link" href="${esc(trailer.official_url)}" target="_blank" rel="noopener">${esc(text("watchTrailer"))}</a>
+                        </div>`;
+                    return;
+                }
+
+                if (trailer.official_url) {
+                    $("trailer").innerHTML = `
+                    <div class="trailer-empty">
+                        <div>
+                            <div class="trailer-kicker">${esc(text("officialTrailer"))}</div>
+                            <div class="trailer-title">${esc(data.title)}</div>
+                            <div class="panel-copy" style="margin-top:7px;color:rgba(255,255,255,0.72);">${esc(localized(data.phase.label))}</div>
+                            <a class="trailer-link" href="${esc(trailer.official_url)}" target="_blank" rel="noopener" style="margin-top:14px;">${esc(text("watchTrailer"))}</a>
+                        </div>
+                    </div>`;
+                    return;
+                }
+
+                $("trailer").innerHTML = `
+                    <div class="trailer-empty">
+                        <div>
+                            <div class="trailer-kicker">${esc(text("officialTrailer"))}</div>
+                            <div class="trailer-title">${esc(text("waitingTrailer"))}</div>
+                            <div class="panel-copy" style="margin-top:7px;color:rgba(255,255,255,0.72);">${esc(text("trailerHelp"))}</div>
+                        </div>
+                    </div>`;
+            }
+
+            function render() {
+                renderStaticCopy();
+                const cockpit = data.cockpit[lang] || data.cockpit.id;
+
+                document.title = `${data.title} | ${text("pageTitleSuffix")}`;
+                $("title").textContent = data.title;
+                const verdict = cockpit.hero_verdict || {};
+                $("heroVerdict").innerHTML = renderHeroVerdict(verdict);
+                $("phase").textContent = localized(data.phase.label);
+                const releaseDays = daysUntil(data.release_date);
+                $("release").textContent = releaseDays > 0
+                    ? `${text("release")}: ${formatDate(data.release_date)} · ${releaseDays} ${text("daysLeft")}`
+                    : `${text("release")}: ${formatDate(data.release_date)}`;
+                renderTrailer();
+
+                $("guideFlow").innerHTML = renderGuideFlow();
+                $("signStack").innerHTML = renderSignStack(cockpit);
+                wireSignCards();
+                $("content").hidden = false;
+            }
+
+            $("langToggle").addEventListener("click", () => {
+                lang = lang === "id" ? "en" : "id";
+                localStorage.setItem("sab_public_lang", lang);
+                render();
+            });
+
+            renderStaticCopy();
+            fetch("sab-public.json", { cache: "no-store" })
+                .then((response) => {
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    return response.json();
+                })
+                .then((payload) => {
+                    data = payload;
+                    render();
+                })
+                .catch((error) => {
+                    $("error").hidden = false;
+                    $("error").textContent = `${text("loadError")} ${error.message}`;
+                });
+        })();
+    </script>
+</body>
+</html>
